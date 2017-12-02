@@ -13,13 +13,13 @@ void setup() {
   // The overall brightness of ALL the LEDs can be adjusted using setBrightness(). 
   // This takes a single argument, a number in the range 0 (off) to 255 (max brightness). 
   // For example, to set a strip to 1/4 brightness: strip.setBrightness(64);
-  strip.setBrightness(150);
+  strip.setBrightness(90);
   strip.show(); // Initialize all pixels to 'off'
 }
 void loop() {
   // First set all to green/bluish
   oneColor(strip.Color(0, 0, 0));
-  delay(TIME_IN_MS_PER_LED);
+  delay(5000);
 
   for(uint16_t i=0; i< 20; i++) {
     strip.setPixelColor(i, strip.Color(20, 180, 0));

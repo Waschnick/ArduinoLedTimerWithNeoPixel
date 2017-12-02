@@ -13,7 +13,7 @@ void setup() {
   // The overall brightness of ALL the LEDs can be adjusted using setBrightness(). 
   // This takes a single argument, a number in the range 0 (off) to 255 (max brightness). 
   // For example, to set a strip to 1/4 brightness: strip.setBrightness(64);
-  strip.setBrightness(150);
+  strip.setBrightness(90);
   strip.show(); // Initialize all pixels to 'off'
 }
 void loop() {
@@ -21,10 +21,11 @@ void loop() {
   oneColor(strip.Color(0, 0, 0));
   delay(TIME_IN_MS_PER_LED);
 
+
+  count(strip.Color(0, 0, 180));
   count(strip.Color(20, 180, 0));
-  count(strip.Color(10, 10, 10));
   count(strip.Color(255, 210, 0));
-  count(strip.Color(255, 125, 0));
+  count(strip.Color(240, 100, 0));
   count(strip.Color(255, 0, 0));
 
   // STROBO
