@@ -17,25 +17,47 @@ void setup() {
   strip.show(); // Initialize all pixels to 'off'
 }
 void loop() {
-  // First set all to green/bluish
-  oneColor(strip.Color(20, 150, 20));
+  // First set all to BLANK
+  oneColor(strip.Color(0, 0, 0));
   delay(TIME_IN_MS_PER_LED);
- 
-  // Count 60 LEDs, one per second --> 
-  count(strip.Color(0, 250, 0));
 
-  // Count 60 LEDs, one per second
-  count(strip.Color(255, 230, 0));
+  // 1 GREEN
+  count(strip.Color(0, 255, 0));
 
-  // Count 60 LEDs, one per second
+  // 2 LIGHTER GREEN 
+  count(strip.Color(40, 180, 0));
+
+  // 3 LIGHT-GREEN
+  count(strip.Color(20, 90, 0));
+  
+  // 4 BLUE
+  count(strip.Color(0, 70, 150));
+  
+  // 5 LIGHT-BLUE
+  count(strip.Color(25, 25, 100));
+  
+  // 5 WHITE
+  //count(strip.Color(5, 5, 5));
+
+  // 6 YELLOW-WHITE
+  count(strip.Color(30, 30, 10));
+
+  // 7 YELLOW
+  count(strip.Color(255, 210, 0));
+  
+  // 8 YELLOW-ORANGE
+  count(strip.Color(200, 120, 0));
+  
+  // 9 ORANGE
+  count(strip.Color(255, 80, 0));
+  
+  // 10 RED
   count(strip.Color(255, 0, 0));
 
-  // Count 60 LEDs, one per second
+  // STROBO
   theaterChaseRainbow(50);
-  oneColor(strip.Color(0, 0, 0));  
-  delay(1000000);
-  delay(1000000);
-  delay(1000000);
+  oneColor(strip.Color(0, 0, 0));
+  delay(10000000);
 }
 
 // Fill the dots one after the other with a color
@@ -84,21 +106,7 @@ void rainbowCycle(uint8_t wait) {
     delay(wait);
   }
 }
-//Theatre-style crawling lights.
-void theaterChase(uint32_t c, uint8_t wait) {
-  for (int j=0; j<10; j++) {  //do 10 cycles of chasing
-    for (int q=0; q < 3; q++) {
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, c);    //turn every third pixel on
-      }
-      strip.show();
-      delay(wait);
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, 0);        //turn every third pixel off
-      }
-    }
-  }
-}
+
 //Theatre-style crawling lights with rainbow effect
 void theaterChaseRainbow(uint8_t wait) {
   for (int j=0; j < 256; j++) {     // cycle all 256 colors in the wheel

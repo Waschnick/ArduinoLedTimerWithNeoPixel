@@ -13,12 +13,12 @@ void setup() {
   // The overall brightness of ALL the LEDs can be adjusted using setBrightness(). 
   // This takes a single argument, a number in the range 0 (off) to 255 (max brightness). 
   // For example, to set a strip to 1/4 brightness: strip.setBrightness(64);
-  strip.setBrightness(150);
+  strip.setBrightness(90);
   strip.show(); // Initialize all pixels to 'off'
 }
 void loop() {
   // First set all to GREENISH
-  oneColor(strip.Color(20, 180, 0));
+  oneColor(strip.Color(20, 250, 0));
   delay(TIME_IN_MS_PER_LED);
 
    // Count 60 LEDs, one per second YELLOW
@@ -29,6 +29,9 @@ void loop() {
  
   // STROBO!
   theaterChaseRainbow(50);
+  oneColor(strip.Color(0, 0, 0));
+  delay(1000000);
+  delay(1000000);
   delay(1000000);
 }
 
